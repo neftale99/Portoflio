@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+* 
+{
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ivory;
+}
+
+canvas 
+{
+    touch-action: none;
+}
+
+.loading-screen
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 4rem;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    background-color: aqua;
+    background-image: linear-gradient(0deg, #b8c6cb 0%, #f5f7fa 74%);
+    text-align: center;
+}
+
+.loading-screen--hidden
+{
+    animation: fade-out 0.5s ease-in-out forwards 1s;
+}
+
+@keyframes fade-out
+{
+  0%
+  {
+    opacity: 1;
+  }
+  100%
+  {
+    opacity: 0;
+    visibility: hidden;
+  }  
+}
+
+.loading-screen-title
+{
+    font-family: "EB Garamond", sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+}
+
+.progress-container
+{
+    width: 100%;
+    height: 1rem;
+    background-color: rgb(102, 106, 113 / 42%);
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.progress-bar
+{
+    width: 0;
+    height: 100%;   
+    background-color: #000000;
+    transition: width 1s ease-in-out;
+}
+
+.messageMobile > div
+{
+    font-family: "EB Garamond", sans-serif;
+    text-align: center;
+    position: absolute;
+    background: transparent;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+}
+
+.monitorScreen iframe 
+{
+    width: 1080px;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.lapScreen iframe 
+{
+    width: 860px;
+    height: 570px;
+    border: none;
+    border-radius: 5px;
+    background: #000000;
+}
+
+
+@media screen and (max-width: 780px)
+{
+    .loading-screen-title
+    {
+        font-size: 2rem;
+    }
+
+    .loading-screen 
+    {
+        transform: translateY(-5%)
+    }
+
+}
